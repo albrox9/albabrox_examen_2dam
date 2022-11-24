@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 
+import 'login_views/splash_view.dart';
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -9,10 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
-      initialRoute: '/splashview',
+      initialRoute: '/splash_view',
       routes: {
-        '/splashview': (context) => SplashView(),
-        '/details': (context) => DetailScreen(),
-      };
-    }
+        '/splash_view': (context) => const SplashView(),
+      },
+    );
+  }
 }
+
