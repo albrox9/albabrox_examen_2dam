@@ -1,5 +1,6 @@
 
 import 'package:albabrox_examen_2dam/widget_views/input_text.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {

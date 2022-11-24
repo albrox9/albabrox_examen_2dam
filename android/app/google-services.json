@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "862270109027",
+    "project_id": "examendi-177d6",
+    "storage_bucket": "examendi-177d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862270109027:android:4f8191461b97ad11bd0f56",
+        "android_client_info": {
+          "package_name": "com.example.albrox9.albabrox_examen_2dam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862270109027-1pr00a7fi9tke8b99473o4e9pqsr09jr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2OB7grRgci6sQq2dSgnUUwSY4qOTgzRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862270109027-1pr00a7fi9tke8b99473o4e9pqsr09jr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
