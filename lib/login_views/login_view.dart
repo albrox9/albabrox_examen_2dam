@@ -10,20 +10,20 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    InputText itUser = const InputText(
+    InputText itUser = InputText(
         iWordLength: 20,
         sHelperText: 'Enter username',
         sLabel: 'Username',
-        iLeadingIcon: Icon(Icons.account_circle),
-        iTrailingIcon: Icon(Icons.face),
+        iLeadingIcon: const Icon(Icons.face),
+        iTrailingIcon: const Icon(Icons.check_circle),
         bIsPasswordInput: false);
 
-    InputText itPass = const InputText(
+    InputText itPass =  InputText(
         iWordLength: 20,
-        sHelperText: 'Enter username',
-        sLabel: 'Username',
-        iLeadingIcon: Icon(Icons.password),
-        iTrailingIcon: Icon(Icons.password_sharp),
+        sHelperText: 'Enter password',
+        sLabel: 'Password',
+        iLeadingIcon: const Icon(Icons.lock),
+        iTrailingIcon: const Icon(Icons.check_circle),
         bIsPasswordInput: true);
 
     return Scaffold(
@@ -36,6 +36,7 @@ class LoginView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             itUser,
+            itPass,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

@@ -9,10 +9,7 @@ class InputText extends StatelessWidget {
   final Icon iTrailingIcon;
   final bool bIsPasswordInput;
 
-
-
-
-  const InputText({Key? key,
+      InputText({Key? key,
     required this.iWordLength,
     required this.sHelperText,
     required this.sLabel,
@@ -20,6 +17,8 @@ class InputText extends StatelessWidget {
     required this.iTrailingIcon,
     required this.bIsPasswordInput,})
       : super(key: key);
+
+  final _myController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +28,10 @@ class InputText extends StatelessWidget {
         vertical: 15,
       ),
       child: TextFormField(
+        controller: _myController,
         maxLength: iWordLength,
         obscureText: bIsPasswordInput,
+
 
           decoration: InputDecoration(
           labelText: sLabel,
