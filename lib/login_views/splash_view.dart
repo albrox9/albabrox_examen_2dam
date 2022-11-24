@@ -21,7 +21,7 @@ class _State extends State<SplashView> {
                 mainAxisSize: MainAxisSize.max,
                 children: const [
                   Image(image: AssetImage("assets/image/logo.jpg"), width: 250, height: 200, ),
-                  Text("Respira...",
+                  Text("Just breath...",
                       style: TextStyle(
                           color: Colors.grey,
                           fontSize: 23,

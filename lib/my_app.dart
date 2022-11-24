@@ -12,11 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.amber
+      ),
       title: 'Welcome to Flutter',
-      initialRoute: '/splash_view',
+      initialRoute: '/login_view',
       routes: {
-        '/splash_view': (context) => const SplashView(),
-        '/login_view': (context) => const LoginView(),
+        '/': (context) => const SplashView(),
+        '/login_view': (context) => LoginView(),
       },
     );
   }
