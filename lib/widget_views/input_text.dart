@@ -20,6 +20,10 @@ class InputText extends StatelessWidget {
 
   final _myController = TextEditingController();
 
+  String getText(){
+    return _myController.text;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

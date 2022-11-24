@@ -4,7 +4,40 @@ import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
 
+
   const LoginView({Key? key}) : super(key: key);
+
+  //logica de la clase login. Creamos la funcion asincrona que comprueba usuario y contraseña.
+  void singUp(String emailAddress, String password, BuildContext context) async{
+
+    await Future.delayed(const Duration(seconds: 1));
+
+
+    try {
+
+      final credential =
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+
+        email: emailAddress,
+        password: password,
+      );
+
+
+      Navigator.of(context).popAndPushNamed('/onboarding');
+
+
+    } on FirebaseAuthException catch (e) {
+
+      if (e.code == 'user-not-found') {
+        debugPrint('No user found for that email.');
+
+      } else if (e.code == 'wrong-password') {
+        debugPrint('Wrong password provided for that user.');
+      }
+    }
+
+
+  }
 
 
   @override
@@ -41,7 +74,11 @@ class LoginView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                    //llamamos a la función que controla el login
+                    singUp(itUser.getText(), itPass.getText(), context);
+                  },
                   child: const Text("Sing up"),
                 ),
 
