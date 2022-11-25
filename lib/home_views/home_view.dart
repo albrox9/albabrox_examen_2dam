@@ -27,7 +27,6 @@ class _HomeViewState extends State<HomeView> {
   }
 
   void getSportCollection() async {
-
     final ref = DataHolder().db.collection("sports")
         .withConverter(
       fromFirestore: Sport.fromFirestore,
@@ -36,12 +35,18 @@ class _HomeViewState extends State<HomeView> {
 
     final docSnap = await ref.get();
 
-    setState((){
-        for (int i = 0; i < docSnap.docs.length; i ++){
-          sportGrid.add(docSnap.docs[i].data());
-        }
+    setState(() {
+      for (int i = 0; i < docSnap.docs.length; i ++) {
+        sportGrid.add(docSnap.docs[i].data());
+      }
     });
   }
+
+  void dataSport(int index) {
+    DataHolder().indexSport = sportGrid[index];
+    Navigator.of(context).popAndPushNamed('/description_view');
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -49,27 +54,29 @@ class _HomeViewState extends State<HomeView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bienvenido${DataHolder().p?.name!}'),
+        title: Text('Bienvenido ${DataHolder().p?.name!}'),
 
       ),
       body: Center(
           child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3
-              ),
-              itemCount: sportGrid.length,
-              itemBuilder: (BuildContext context, int index){
-                return GridItem(
-                    sImgURL: sportGrid[index].image!,
-                    sName: sportGrid[index].name!,
-                    index: index,
-                 );
-              },
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2
+            ),
+            itemCount: sportGrid.length,
+            itemBuilder: (BuildContext context, int index) {
+              return GridItem(
+                sName: sportGrid[index].name!,
+                index: index,
+                onShortClick: dataSport,
+              );
+            },
           )
       ),
     );
   }
 }
+
+
 /*OutlinedButton(
               onPressed: () {
                 AdminData().singOut(context);

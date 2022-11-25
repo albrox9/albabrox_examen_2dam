@@ -1,4 +1,5 @@
 
+import 'package:albabrox_examen_2dam/home_views/description_view.dart';
 import 'package:albabrox_examen_2dam/home_views/home_view.dart';
 import 'package:albabrox_examen_2dam/login_views/login_view.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
@@ -27,6 +28,8 @@ class MyApp extends StatelessWidget {
         '/register_view':(context) => const RegisterView(),
         '/home_view':(context) => const HomeView(),
         '/onboarding_view':(context) => const OnBoardingView(),
+        '/description_view':(context) => const DescriptionView(),
+
 
       },
     );
