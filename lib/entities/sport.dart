@@ -5,13 +5,11 @@ class Sport {
   final String? image;
   final String uid;
 
-  //final int members;
 
   Sport({
     this.name = "",
     this.image = "",
     this.uid = "",
-    //this.members=0
   });
 
   factory Sport.fromFirestore(DocumentSnapshot<Map<String, dynamic>> snapshot,
@@ -20,7 +18,6 @@ class Sport {
     return Sport(
         name: data?['name'],
         image: data?['image'],
-        //members: data?['members'],
         uid: snapshot.id
     );
   }
@@ -29,7 +26,8 @@ class Sport {
     return {
       if (name != null) "name": name,
       if (image != null) "image": image,
-      //if (members != 0) "members": members,
+
     };
   }
 }
+
