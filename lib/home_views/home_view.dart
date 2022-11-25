@@ -1,3 +1,4 @@
+import 'package:albabrox_examen_2dam/custom_views/grid_item.dart';
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:albabrox_examen_2dam/entities/profile.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
@@ -18,29 +19,42 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
+  List<GridItem> sportGrid = [];
   RFButton button = const RFButton();
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Text("YA estoy en el puñetero home porfin"),
-            OutlinedButton(
-              onPressed: () {
-                AdminData().singOut(context);
-                //Navigator.of(context).popAndPushNamed('/login_view');
+      appBar: AppBar(
+        title: Text('Bienvenido${DataHolder().perfil.name!}'),
+
+      ),
+      body: Center(
+          child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3
+              ),
+              itemCount: sportGrid.length,
+              itemBuilder: (BuildContext context, int index){
+                return GridItem(
+                    sImgURL: sportGrid[index].image!,
+                    sName: sportGrid[index].name!,
+                    onShortClick: listItemShortClicked,
+                    index: index);
               },
-              child: const Text("SING OUT"),
-            ),
-            button,
-          ],
-        )
+          )
+      ),
     );
   }
 }
+/*OutlinedButton(
+              onPressed: () {
+                AdminData().singOut(context);
+                },
+              child: const Text("SING OUT"),
+              ),
+              button,*/
+
+
