@@ -23,7 +23,7 @@ class LoginView extends StatelessWidget {
         password: password,
       );
 
-      Navigator.of(context).popAndPushNamed('/onboarding');
+      Navigator.of(context).popAndPushNamed('/home_view');
 
     } on FirebaseAuthException catch (e) {
 
