@@ -1,3 +1,5 @@
+
+
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,13 +37,16 @@ class AdminData{
 
 
 
-  void insertSport(String name, String urlImage, String description, BuildContext context) async {
+  void insertSport(String name, String description, BuildContext context) async {
 
-    Sport s = Sport(name: name, image: urlImage, description: description);
+    print("AUI Manatraonaraposgapsodgmasdgom");
 
-    await DataHolder().db.collection("sports").doc(DataHolder().indexSport.uid).
-    set(s.toFirestore()).
-    onError((e, _) => print("Error writing document: $e"));
+    // Add a new document with a generated id.
+    final sport = {"name": name, "description": description, "image": ""};
+
+    DataHolder().db.collection("sports").add(sport).then((documentSnapshot) =>
+        print("Added Data with ID: ${documentSnapshot.id}"));
+
 
     Navigator.of(context).popAndPushNamed("/home_view");
   }

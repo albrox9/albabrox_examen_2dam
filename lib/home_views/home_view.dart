@@ -66,7 +66,6 @@ class _HomeViewState extends State<HomeView> {
             itemBuilder: (BuildContext context, int index) {
               return GridItem(
                 sName: sportGrid[index].name!,
-                sDescription: sportGrid[index].description!,
                 index: index,
                 onShortClick: dataSport,
 

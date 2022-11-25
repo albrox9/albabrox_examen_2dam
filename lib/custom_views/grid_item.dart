@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 class GridItem extends StatelessWidget{
 
   final String sName;
-  final String sDescription;
   final Function (int index) onShortClick;
   final int index;
 
   const GridItem({Key? key, required this.sName,
-   required this.index, required this.onShortClick, required this.sDescription}) : super(key:key);
+   required this.index, required this.onShortClick}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {

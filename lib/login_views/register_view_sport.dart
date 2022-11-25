@@ -23,17 +23,10 @@ class _RegisterViewSport extends State<RegisterViewSport> {
       );
 
   InputIcon itDescription =  InputIcon(
-      iWordLength: 20,
+      iWordLength: 100,
       sHelperText: 'Enter deescription of sport',
       sLabel: "Sport's description",
       iLeadingIcon: const Icon(Icons.face),
-      );
-
-  InputIcon itUrlImage =  InputIcon(
-      iWordLength: 20,
-      sHelperText: 'Enter url image',
-      sLabel: "Url's image",
-      iLeadingIcon: const Icon(Icons.location_city),
       );
 
 
@@ -51,13 +44,13 @@ class _RegisterViewSport extends State<RegisterViewSport> {
               children: [
                 itName,
                 itDescription,
-                itUrlImage,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     OutlinedButton(
                       onPressed: () {
-                        AdminData().insertSport(itName.getText(), itUrlImage.getText(), itDescription.getText(), context);
+                        print("Que pasa con el putobonton de los huevos");
+                        AdminData().insertSport(itName.getText(), itDescription.getText(), context);
 
                       },
                       child: const Text("CREATE SPORT"),
