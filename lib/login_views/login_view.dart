@@ -1,4 +1,5 @@
 
+import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:albabrox_examen_2dam/widget_views/input_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -16,16 +17,13 @@ class LoginView extends StatelessWidget {
 
     try {
 
-      final credential =
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
 
+      await DataHolder().db.signInWithEmailAndPassword(
         email: emailAddress,
         password: password,
       );
 
-
       Navigator.of(context).popAndPushNamed('/onboarding');
-
 
     } on FirebaseAuthException catch (e) {
 

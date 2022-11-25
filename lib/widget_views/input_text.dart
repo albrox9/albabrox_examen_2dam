@@ -42,7 +42,7 @@ class InputText extends StatelessWidget {
           decoration: InputDecoration(
           labelText: sLabel,
           helperText: sHelperText,
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           prefixIcon: iLeadingIcon,
           suffixIcon: iTrailingIcon,
         ),
