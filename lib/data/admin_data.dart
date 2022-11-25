@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../entities/profile.dart';
+import '../entities/sport.dart';
 
 class AdminData{
 
@@ -18,7 +19,6 @@ class AdminData{
     Navigator.of(context).popAndPushNamed("/home_view");
   }
 
-
   Future <bool> getProfile() async {
 
     String? idUser = DataHolder().auth.currentUser?.uid;
@@ -31,6 +31,19 @@ class AdminData{
     DocumentSnapshot docsnap = await docRef.get();
     return docsnap.exists;
 
+  }
+
+
+
+  void insertSport(String name, String urlImage, String description, BuildContext context) async {
+
+    Sport s = Sport(name: name, image: urlImage, description: description);
+
+    await DataHolder().db.collection("sports").doc(DataHolder().indexSport.uid).
+    set(s.toFirestore()).
+    onError((e, _) => print("Error writing document: $e"));
+
+    Navigator.of(context).popAndPushNamed("/home_view");
   }
 
   void singOut(context) async{

@@ -17,32 +17,28 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       sHelperText: 'Enter username',
       sLabel: 'Username',
       iLeadingIcon: const Icon(Icons.face),
-      iTrailingIcon: const Icon(Icons.check_circle),
-      bIsPasswordInput: false);
+      );
 
   InputIcon itAge =  InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter age',
       sLabel: 'Age',
       iLeadingIcon: const Icon(Icons.face),
-      iTrailingIcon: const Icon(Icons.check_circle),
-      bIsPasswordInput: false);
+      );
 
   InputIcon itCity =  InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter city',
       sLabel: 'City',
       iLeadingIcon: const Icon(Icons.location_city),
-      iTrailingIcon: const Icon(Icons.check_circle),
-      bIsPasswordInput: false);
+     );
 
   InputIcon itCountry =  InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter country',
       sLabel: 'Country',
       iLeadingIcon: const Icon(Icons.location_city),
-      iTrailingIcon: const Icon(Icons.check_circle),
-      bIsPasswordInput: false);
+      );
 
 
 

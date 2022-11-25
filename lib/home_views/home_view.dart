@@ -54,7 +54,7 @@ class _HomeViewState extends State<HomeView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bienvenido ${DataHolder().p?.name!}'),
+        title: Text('Welcome ${DataHolder().p?.name}'),
 
       ),
       body: Center(
@@ -66,15 +66,17 @@ class _HomeViewState extends State<HomeView> {
             itemBuilder: (BuildContext context, int index) {
               return GridItem(
                 sName: sportGrid[index].name!,
+                sDescription: sportGrid[index].description!,
                 index: index,
                 onShortClick: dataSport,
+
               );
             },
           ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-        // Add your onPressed code here!
+        Navigator.of(context).popAndPushNamed('/register_view_sport');
         },
         child: const Icon(Icons.add_circle),
       ),

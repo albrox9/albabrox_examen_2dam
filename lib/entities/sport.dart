@@ -3,12 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Sport {
   final String? name;
   final String? image;
+  final String? description;
   final String uid;
 
 
   Sport({
     this.name = "",
     this.image = "",
+    this.description,
     this.uid = "",
   });
 
@@ -18,6 +20,7 @@ class Sport {
     return Sport(
         name: data?['name'],
         image: data?['image'],
+        description: data?['description'],
         uid: snapshot.id
     );
   }
@@ -26,6 +29,7 @@ class Sport {
     return {
       if (name != null) "name": name,
       if (image != null) "image": image,
+      if (description != null) "image": description,
 
     };
   }
