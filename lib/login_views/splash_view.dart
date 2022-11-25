@@ -24,7 +24,9 @@ class _State extends State<SplashView> {
       print("Esta en el metodo ya del SPLASHHHHHHHHHHHH ");
       await Future.delayed(const Duration(seconds: 2));
 
+
       bool pExist = await AdminData().getProfile();
+
 
       if(pExist){
 

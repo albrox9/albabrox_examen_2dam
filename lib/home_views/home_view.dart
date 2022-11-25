@@ -29,8 +29,8 @@ class _HomeViewState extends State<HomeView> {
             Text("YA estoy en el puñetero home porfin"),
             OutlinedButton(
               onPressed: () {
-                AdminData().singOut();
-                Navigator.of(context).popAndPushNamed('/login_view');
+                AdminData().singOut(context);
+                //Navigator.of(context).popAndPushNamed('/login_view');
               },
               child: const Text("SING OUT"),
             ),

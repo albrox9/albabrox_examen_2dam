@@ -7,6 +7,17 @@ import '../entities/profile.dart';
 
 class AdminData{
 
+  void insertProfile(String name, int age, String city, String country, BuildContext context) async {
+
+    Profile p = Profile(name: name, country: country, city: city, age: age);
+
+    await DataHolder().db.collection("profiles").doc(DataHolder().auth.currentUser?.uid).
+    set(p.toFirestore()).
+    onError((e, _) => print("Error writing document: $e"));
+
+    Navigator.of(context).popAndPushNamed("/home_view");
+  }
+
 
   Future <bool> getProfile() async {
 
@@ -22,9 +33,10 @@ class AdminData{
 
   }
 
-  void singOut() async{
+  void singOut(context) async{
     print("ME DESLOGUESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
     await DataHolder().auth.signOut();
+    Navigator.of(context).popAndPushNamed('/login_view');
 
   }
 
