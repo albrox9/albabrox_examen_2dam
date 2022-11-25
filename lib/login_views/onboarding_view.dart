@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import '../widget_views/input_text.dart';
 
@@ -27,7 +27,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       iTrailingIcon: const Icon(Icons.check_circle),
       bIsPasswordInput: true);
 
-  InputText itPassRep =  InputText(
+  InputText itCountry =  InputText(
       iWordLength: 20,
       sHelperText: 'Enter password again',
       sLabel: 'Password',
@@ -49,26 +49,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                itUser,
-                itPass,
-                itPassRep,
+                itName,
+                itAge,
+                itCountry,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     OutlinedButton(
-                      onPressed: () {
-                        if(itPass.getText() == itPassRep.getText()){
-                          singUp(itUser.getText(), itPass.getText(), context);
-                        }
-                      },
-                      child: const Text("Ok"),
+                      onPressed: () {},
+                      child: const Text("CREATE PROFILE"),
                     ),
 
                     OutlinedButton(
-                      onPressed: () {
-                        Navigator.popAndPushNamed(context, '/login_view');
-
-                      },
+                      onPressed: () {},
                       child: const Text("Cancel"),
                     )
                   ],
@@ -84,9 +77,3 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 }
 
 
-
-
-
-
-}
-}*/

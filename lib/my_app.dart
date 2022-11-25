@@ -3,6 +3,7 @@ import 'package:albabrox_examen_2dam/home_views/home_view.dart';
 import 'package:albabrox_examen_2dam/login_views/login_view.dart';
 import 'package:flutter/material.dart';
 
+import 'login_views/onboarding_view.dart';
 import 'login_views/register_view.dart';
 import 'login_views/splash_view.dart';
 
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
         '/login_view': (context) => const LoginView(),
         '/register_view':(context) => const RegisterView(),
         '/home_view':(context) => const HomeView(),
+        '/onboarding_view':(context) => const OnBoardingView(),
+
       },
     );
   }
