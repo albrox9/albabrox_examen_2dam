@@ -6,17 +6,13 @@ class InputIcon extends StatelessWidget {
   final String sHelperText;
   final String sLabel;
   final Icon iLeadingIcon;
-  final Icon iTrailingIcon;
-  final bool bIsPasswordInput;
 
 
   InputIcon({Key? key,
     required this.iWordLength,
     required this.sHelperText,
     required this.sLabel,
-    required this.iLeadingIcon,
-    required this.iTrailingIcon,
-    required this.bIsPasswordInput,})
+    required this.iLeadingIcon,})
       : super(key: key);
 
   final _myController = TextEditingController();
@@ -37,7 +33,6 @@ class InputIcon extends StatelessWidget {
       child: TextFormField(
         controller: _myController,
         maxLength: iWordLength,
-        obscureText: bIsPasswordInput,
 
         decoration: InputDecoration(
           labelText: sLabel,

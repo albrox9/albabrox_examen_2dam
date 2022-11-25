@@ -20,7 +20,7 @@ class _DescriptionViewState extends State<DescriptionView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title: Text('Bienvenido${DataHolder().indexSport.name}'),
+        title: Text('Welcome to ${DataHolder().indexSport.name} page'),
       ),
         body: Center(
           child: Column(
@@ -28,10 +28,20 @@ class _DescriptionViewState extends State<DescriptionView> {
             children: [
               Image.network(DataHolder().indexSport.image.toString()),
               Text(DataHolder().indexSport.name.toString(),
-              style: const TextStyle(
+                textAlign: TextAlign.center,
+                style: const TextStyle(
                 color: Colors.blueGrey,
                 fontSize: 35,
-                fontWeight: FontWeight.bold,),),
+                fontWeight: FontWeight.bold,),
+              ),
+              Text(DataHolder().indexSport.description.toString(),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.blueGrey,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               button,
               ]
           ),
