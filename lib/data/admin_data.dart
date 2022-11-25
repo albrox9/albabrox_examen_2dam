@@ -21,7 +21,7 @@ class AdminData{
     Navigator.of(context).popAndPushNamed("/home_view");
   }
 
-  Future <bool> getProfile() async {
+  Future <bool> IsGetProfile() async {
 
     String? idUser = DataHolder().auth.currentUser?.uid;
 
@@ -34,6 +34,8 @@ class AdminData{
     return docsnap.exists;
 
   }
+
+
 
 
 

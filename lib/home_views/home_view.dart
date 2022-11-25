@@ -4,6 +4,7 @@ import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_views/rf_button.dart';
+import '../data/admin_data.dart';
 
 class HomeView extends StatefulWidget {
 
@@ -55,35 +56,42 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Welcome ${DataHolder().p?.name}'),
-
       ),
-      body: Center(
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                shrinkWrap: true,
+                itemCount: sportGrid.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return GridItem(
+                    sName: sportGrid[index].name!,
+                    index: index,
+                    onShortClick: dataSport,
+                  );
+                }
             ),
-            itemCount: sportGrid.length,
-            itemBuilder: (BuildContext context, int index) {
-              return GridItem(
-                sName: sportGrid[index].name!,
-                index: index,
-                onShortClick: dataSport,
 
-              );
-            },
-          ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-        Navigator.of(context).popAndPushNamed('/register_view_sport');
-        },
-        child: const Icon(Icons.add_circle),
-      ),
+            OutlinedButton(
+              onPressed: () {
+                AdminData().singOut(context);
+                // Navigator.of(context).popAndPushNamed('/login_view');
+              },
+              child: const Text("SING OUT"),
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.of(context).popAndPushNamed('/register_view_sport');
+              },
+              child: const Icon(Icons.add_circle),
+            ),
+          ],
+      )
     );
   }
 }
 
-
-/**/
 
 

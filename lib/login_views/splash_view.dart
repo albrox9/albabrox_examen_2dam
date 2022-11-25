@@ -25,7 +25,7 @@ class _State extends State<SplashView> {
       await Future.delayed(const Duration(seconds: 2));
 
 
-      bool pExist = await AdminData().getProfile();
+      bool pExist = await AdminData().IsGetProfile();
 
 
       if(pExist){

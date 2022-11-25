@@ -28,7 +28,7 @@ class LoginView extends StatelessWidget {
       );
 
       print("E entrado a comprobar estoooooooooooooooooooooooooooooooooooooooooooooooooo");
-      bool pExist = await AdminData().getProfile();
+      bool pExist = await AdminData().IsGetProfile();
 
       if(pExist){
         print("ME voy a la homeeeeeeeeeeeeeeeeeeeeeeeeeee");
