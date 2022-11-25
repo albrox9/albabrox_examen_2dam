@@ -1,3 +1,4 @@
+import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:flutter/material.dart';
 
 import '../widget_views/input_text.dart';
@@ -61,7 +62,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     ),
 
                     OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        AdminData().singOut();
+                        Navigator.of(context).popAndPushNamed('/login_view');
+                      },
                       child: const Text("Cancel"),
                     )
                   ],

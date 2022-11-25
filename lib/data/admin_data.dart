@@ -22,9 +22,9 @@ class AdminData{
 
   }
 
-  void singOut(){
-
-    DataHolder().auth.signOut();
+  void singOut() async{
+    print("ME DESLOGUESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+    await DataHolder().auth.signOut();
 
   }
 

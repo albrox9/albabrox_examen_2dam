@@ -16,20 +16,24 @@ class LoginView extends StatelessWidget {
   void singIn(String emailAddress, String password, BuildContext context) async{
 
     await Future.delayed(const Duration(seconds: 1));
-
+    print("E entrado al loign");
 
     try {
       await DataHolder().auth.signInWithEmailAndPassword(
         email: emailAddress,
         password: password,
+
       );
 
+      print("E entrado a comprobar estoooooooooooooooooooooooooooooooooooooooooooooooooo");
       bool pExist = await AdminData().getProfile();
 
       if(pExist){
+        print("ME voy a la homeeeeeeeeeeeeeeeeeeeeeeeeeee");
         Navigator.of(context).popAndPushNamed("/home_view");
 
       } else {
+        print("Me voy al onboardinggggggggggggggggggggggggg");
         Navigator.of(context).popAndPushNamed("/onboarding_view");
       }
 

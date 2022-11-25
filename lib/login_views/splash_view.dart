@@ -21,28 +21,22 @@ class _State extends State<SplashView> {
 
   void loadData() async{
     //Función en la que vamos a cargar todos los recursos necesarios (aunque hay cosas que se cargan antes)
-    await Future.delayed(const Duration(seconds: 2));
-
-    if(DataHolder().auth.currentUser == null){
-
-      setState(() {
-        Navigator.of(context).popAndPushNamed("/login_view");
-      });
-
-    }
-    else {
+      print("Esta en el metodo ya del SPLASHHHHHHHHHHHH ");
+      await Future.delayed(const Duration(seconds: 2));
 
       bool pExist = await AdminData().getProfile();
 
       if(pExist){
 
         setState(() {
+          print("Evoy a la homeeeeeeeeeeeeeeeea del SPLASHHHHHHHHHHHH ");
           Navigator.of(context).popAndPushNamed("/home_view");
         });
 
       } else{
 
         setState(() {
+          print("voy al onboardinggggggggggggggggggggggggggSPLASHHHHHHHHHHHHHHHHHHHHHHHHH ");
           Navigator.of(context).popAndPushNamed("/onboarding_view");
         });
 
@@ -50,7 +44,7 @@ class _State extends State<SplashView> {
 
 
 
-    }
+
   }
 
   @override
