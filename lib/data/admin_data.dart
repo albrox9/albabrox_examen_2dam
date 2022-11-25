@@ -22,6 +22,12 @@ class AdminData{
 
   }
 
+  void singOut(){
+
+    DataHolder().auth.signOut();
+
+  }
+
 
 
   }

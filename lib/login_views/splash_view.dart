@@ -1,4 +1,6 @@
 
+import 'package:albabrox_examen_2dam/data/admin_data.dart';
+import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +13,45 @@ class SplashView extends StatefulWidget {
 }
 
 class _State extends State<SplashView> {
+
+  void initState(){
+    super.initState();
+    loadData();
+  }
+
+  void loadData() async{
+    //Función en la que vamos a cargar todos los recursos necesarios (aunque hay cosas que se cargan antes)
+    await Future.delayed(const Duration(seconds: 2));
+
+    if(DataHolder().auth.currentUser == null){
+
+      setState(() {
+        Navigator.of(context).popAndPushNamed("/login_view");
+      });
+
+    }
+    else {
+
+      bool pExist = await AdminData().getProfile();
+
+      if(pExist){
+
+        setState(() {
+          Navigator.of(context).popAndPushNamed("/home_view");
+        });
+
+      } else{
+
+        setState(() {
+          Navigator.of(context).popAndPushNamed("/onboarding_view");
+        });
+
+      }
+
+
+
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

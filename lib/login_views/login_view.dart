@@ -24,8 +24,14 @@ class LoginView extends StatelessWidget {
         password: password,
       );
 
-      Navigator.of(context).popAndPushNamed('/onboarding_view');
+      bool pExist = await AdminData().getProfile();
 
+      if(pExist){
+        Navigator.of(context).popAndPushNamed("/home_view");
+
+      } else {
+        Navigator.of(context).popAndPushNamed("/onboarding_view");
+      }
 
     } on FirebaseAuthException catch (e) {
 

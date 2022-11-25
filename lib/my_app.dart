@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber
       ),
       title: 'Welcome to Flutter',
-      initialRoute: '/register_view',
+      initialRoute: '/',
       //FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
       routes: {
         '/': (context) => const SplashView(),
