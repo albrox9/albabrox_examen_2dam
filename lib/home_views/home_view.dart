@@ -23,6 +23,8 @@ class _HomeViewState extends State<HomeView> {
           title: const Text('Welcome to Flutter'),
         ),
         body:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
           children: [
             Text("YA estoy en el puñetero home porfin"),
             OutlinedButton(
