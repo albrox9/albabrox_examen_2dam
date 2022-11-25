@@ -55,7 +55,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    InputIcon itUser = InputIcon(
+    InputText itUser = InputText(
         iWordLength: 20,
         sHelperText: 'Enter username',
         sLabel: 'Username',

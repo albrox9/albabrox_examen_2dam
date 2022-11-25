@@ -1,3 +1,4 @@
+import 'package:albabrox_examen_2dam/custom_views/input_icon.dart';
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:flutter/material.dart';
 import '../custom_views/input_text.dart';
@@ -11,7 +12,7 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView> {
 
-  InputText itName = InputText(
+  InputIcon itName = InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter username',
       sLabel: 'Username',
@@ -19,7 +20,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       iTrailingIcon: const Icon(Icons.check_circle),
       bIsPasswordInput: false);
 
-  InputText itAge =  InputText(
+  InputIcon itAge =  InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter age',
       sLabel: 'Age',
@@ -27,7 +28,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       iTrailingIcon: const Icon(Icons.check_circle),
       bIsPasswordInput: false);
 
-  InputText itCity =  InputText(
+  InputIcon itCity =  InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter city',
       sLabel: 'City',
@@ -35,7 +36,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       iTrailingIcon: const Icon(Icons.check_circle),
       bIsPasswordInput: false);
 
-  InputText itCountry =  InputText(
+  InputIcon itCountry =  InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter country',
       sLabel: 'Country',
