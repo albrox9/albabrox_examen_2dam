@@ -22,8 +22,12 @@ class _DescriptionViewState extends State<DescriptionView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(DataHolder().indexSport.name.toString()),
-              Text(DataHolder().indexSport.uid.toString()),
+              Image.network(DataHolder().indexSport.image.toString()),
+              Text(DataHolder().indexSport.name.toString(),
+              style: const TextStyle(
+                color: Colors.blueGrey,
+                fontSize: 35,
+                fontWeight: FontWeight.bold,),),
               ]
           ),
         )

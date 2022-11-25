@@ -20,7 +20,12 @@ class GridItem extends StatelessWidget{
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(sName)
+            Text(sName,
+                style: const TextStyle(
+                  color: Colors.blueGrey,
+                  fontSize: 35,
+                  fontWeight: FontWeight.bold,
+                ),)
           ],
         ),
       ),
