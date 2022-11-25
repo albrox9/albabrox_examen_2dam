@@ -9,6 +9,7 @@ class InputText extends StatelessWidget {
   final Icon iTrailingIcon;
   final bool bIsPasswordInput;
 
+
       InputText({Key? key,
     required this.iWordLength,
     required this.sHelperText,
@@ -24,6 +25,8 @@ class InputText extends StatelessWidget {
     return _myController.text;
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +38,6 @@ class InputText extends StatelessWidget {
         controller: _myController,
         maxLength: iWordLength,
         obscureText: bIsPasswordInput,
-
 
           decoration: InputDecoration(
           labelText: sLabel,

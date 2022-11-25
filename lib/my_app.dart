@@ -2,6 +2,7 @@
 import 'package:albabrox_examen_2dam/login_views/login_view.dart';
 import 'package:flutter/material.dart';
 
+import 'login_views/register_view.dart';
 import 'login_views/splash_view.dart';
 
 
@@ -16,10 +17,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber
       ),
       title: 'Welcome to Flutter',
-      initialRoute: '/login_view',
+      initialRoute: '/register_view',
+      //FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
       routes: {
         '/': (context) => const SplashView(),
-        '/login_view': (context) => LoginView(),
+        '/login_view': (context) => const LoginView(),
+        '/register_view':(context) => const RegisterView(),
       },
     );
   }

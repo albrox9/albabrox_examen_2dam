@@ -1,9 +1,8 @@
-import 'package:albabrox_examen_2dam/widget_views/input_text.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class DataHolder {
 
-
-
+  FirebaseAuth db = FirebaseAuth.instance;
   static final DataHolder _dataHolder = DataHolder._internal();
 
   DataHolder._internal();
