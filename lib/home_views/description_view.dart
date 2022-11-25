@@ -3,6 +3,8 @@ import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../custom_views/rf_button.dart';
+
 class DescriptionView extends StatefulWidget {
   const DescriptionView({Key? key}) : super(key: key);
 
@@ -11,6 +13,8 @@ class DescriptionView extends StatefulWidget {
 }
 
 class _DescriptionViewState extends State<DescriptionView> {
+
+  RFButton button = const RFButton();
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +32,7 @@ class _DescriptionViewState extends State<DescriptionView> {
                 color: Colors.blueGrey,
                 fontSize: 35,
                 fontWeight: FontWeight.bold,),),
+              button,
               ]
           ),
         )

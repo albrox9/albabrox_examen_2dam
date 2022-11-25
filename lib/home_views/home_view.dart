@@ -17,7 +17,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
 
   List<Sport> sportGrid = [];
-  RFButton button = const RFButton();
+
 
   @override
   void initState() {
@@ -75,19 +75,14 @@ class _HomeViewState extends State<HomeView> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
         // Add your onPressed code here!
-        }
+        },
+        child: const Icon(Icons.add_circle),
       ),
     );
   }
 }
 
 
-/*OutlinedButton(
-              onPressed: () {
-                AdminData().singOut(context);
-                },
-              child: const Text("SING OUT"),
-              ),
-              button,*/
+/**/
 
 

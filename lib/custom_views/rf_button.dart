@@ -1,3 +1,4 @@
+import 'package:albabrox_examen_2dam/home_views/home_view.dart';
 import 'package:flutter/material.dart';
 
 class RFButton extends StatelessWidget {
@@ -17,13 +18,13 @@ class RFButton extends StatelessWidget {
               fit: BoxFit.cover),
         ),
         child: const Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Text("OK"),
+          padding: EdgeInsets.all(43.0),
+          child: Text("BACK"),
         ),
       ),
       // ),
       onPressed: () {
-        print('Tapped');
+        Navigator.of(context).popAndPushNamed('/home_view');
       },
     );
   }
