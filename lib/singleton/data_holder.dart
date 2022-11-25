@@ -1,8 +1,15 @@
+import 'package:albabrox_examen_2dam/data/admin_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../entities/profile.dart';
 
 class DataHolder {
 
-  FirebaseAuth db = FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore db = FirebaseFirestore.instance;
+  Profile? p;
+
   static final DataHolder _dataHolder = DataHolder._internal();
 
   DataHolder._internal();
@@ -10,5 +17,6 @@ class DataHolder {
   factory DataHolder(){
     return _dataHolder;
   }
+
 
 }

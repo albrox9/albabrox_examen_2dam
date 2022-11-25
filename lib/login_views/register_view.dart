@@ -14,7 +14,7 @@ class RegisterView extends StatelessWidget {
 
     try {
 
-      await DataHolder().db.createUserWithEmailAndPassword(
+      await DataHolder().auth.createUserWithEmailAndPassword(
         email: emailAddress,
         password: password,
       );

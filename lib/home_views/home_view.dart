@@ -1,3 +1,5 @@
+import 'package:albabrox_examen_2dam/entities/profile.dart';
+import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -8,14 +10,17 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+
+  Profile pHome = DataHolder().p as Profile;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Welcome to Flutter'),
         ),
-        body: const Center(
-          child: Text('Hello World'),
+        body: Center(
+          child: Text(pHome.name.toString()),
         ),
     );
   }

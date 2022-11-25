@@ -1,8 +1,11 @@
 
+import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:albabrox_examen_2dam/widget_views/input_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../entities/profile.dart';
 
 class LoginView extends StatelessWidget {
 
@@ -16,14 +19,13 @@ class LoginView extends StatelessWidget {
 
 
     try {
-
-
-      await DataHolder().db.signInWithEmailAndPassword(
+      await DataHolder().auth.signInWithEmailAndPassword(
         email: emailAddress,
         password: password,
       );
 
       Navigator.of(context).popAndPushNamed('/home_view');
+
 
     } on FirebaseAuthException catch (e) {
 

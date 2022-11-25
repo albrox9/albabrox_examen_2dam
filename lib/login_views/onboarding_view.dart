@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 import '../widget_views/input_text.dart';
 
@@ -89,4 +89,4 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
 
 }
-}
+}*/
