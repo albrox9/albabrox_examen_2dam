@@ -1,10 +1,11 @@
 
+import 'package:albabrox_examen_2dam/custom_views/input_icon.dart';
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
-import 'package:albabrox_examen_2dam/widget_views/input_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../custom_views/input_text.dart';
 import '../entities/profile.dart';
 
 class LoginView extends StatelessWidget {
@@ -54,7 +55,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    InputText itUser = InputText(
+    InputIcon itUser = InputIcon(
         iWordLength: 20,
         sHelperText: 'Enter username',
         sLabel: 'Username',

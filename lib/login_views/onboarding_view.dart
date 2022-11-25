@@ -1,6 +1,6 @@
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:flutter/material.dart';
-import '../widget_views/input_text.dart';
+import '../custom_views/input_text.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
