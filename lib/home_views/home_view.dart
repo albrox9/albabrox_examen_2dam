@@ -3,6 +3,8 @@ import 'package:albabrox_examen_2dam/entities/profile.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:flutter/material.dart';
 
+import '../custom_views/rf_button.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
@@ -15,6 +17,8 @@ class HomeView extends StatefulWidget {
 
 
 class _HomeViewState extends State<HomeView> {
+
+  RFButton button = const RFButton();
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +38,7 @@ class _HomeViewState extends State<HomeView> {
               },
               child: const Text("SING OUT"),
             ),
+            button,
           ],
         )
     );

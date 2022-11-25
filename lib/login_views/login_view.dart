@@ -1,5 +1,6 @@
 
-import 'package:albabrox_examen_2dam/custom_views/input_icon.dart';
+import 'package:albabrox_examen_2dam/custom_views/ek_input_text.dart';
+import 'package:albabrox_examen_2dam/custom_views/rf_button.dart';
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -71,6 +72,7 @@ class LoginView extends StatelessWidget {
         iTrailingIcon: const Icon(Icons.check_circle),
         bIsPasswordInput: true);
 
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Welcome to the Adventurer'),
@@ -99,7 +101,8 @@ class LoginView extends StatelessWidget {
                     Navigator.of(context).popAndPushNamed('/register_view');
                   },
                   child: const Text("Register"),
-                )
+                ),
+
               ],
             )
           ],
