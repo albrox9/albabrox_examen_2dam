@@ -4,17 +4,16 @@ class GridItem extends StatelessWidget{
 
   final String sImgURL;
   final String sName;
-  final Function(int index) onShortClick;
   final int index;
 
   const GridItem({Key? key, required this.sImgURL, required this.sName,
-    required this.onShortClick, required this.index}) : super(key:key);
+   required this.index}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        onShortClick(index);
+        print("No vamos a nigun lado");
       },
       child: Card(
         color: Colors.amber,
@@ -25,7 +24,6 @@ class GridItem extends StatelessWidget{
             Text(sName)
           ],
         ),
-
       ),
     );
   }

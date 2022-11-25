@@ -1,26 +1,47 @@
 import 'package:albabrox_examen_2dam/custom_views/grid_item.dart';
-import 'package:albabrox_examen_2dam/data/admin_data.dart';
-import 'package:albabrox_examen_2dam/entities/profile.dart';
+import 'package:albabrox_examen_2dam/entities/sport.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_views/rf_button.dart';
 
 class HomeView extends StatefulWidget {
+
+
   const HomeView({Key? key}) : super(key: key);
 
   @override
   State<HomeView> createState() => _HomeViewState();
-
-
 }
-
-
 
 class _HomeViewState extends State<HomeView> {
 
-  List<GridItem> sportGrid = [];
+  List<Sport> sportGrid = [];
   RFButton button = const RFButton();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getSportCollection();
+  }
+
+  void getSportCollection() async {
+
+    final ref = DataHolder().db.collection("sports")
+        .withConverter(
+      fromFirestore: Sport.fromFirestore,
+      toFirestore: (Sport s, _) => s.toFirestore(),
+    );
+
+    final docSnap = await ref.get();
+
+    setState((){
+        for (int i = 0; i < docSnap.docs.length; i ++){
+          sportGrid.add(docSnap.docs[i].data());
+        }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +49,7 @@ class _HomeViewState extends State<HomeView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bienvenido${DataHolder().perfil.name!}'),
+        title: Text('Bienvenido${DataHolder().p?.name!}'),
 
       ),
       body: Center(
@@ -41,8 +62,8 @@ class _HomeViewState extends State<HomeView> {
                 return GridItem(
                     sImgURL: sportGrid[index].image!,
                     sName: sportGrid[index].name!,
-                    onShortClick: listItemShortClicked,
-                    index: index);
+                    index: index,
+                 );
               },
           )
       ),
