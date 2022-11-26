@@ -2,11 +2,8 @@
 
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-
 import '../entities/profile.dart';
-import '../entities/sport.dart';
 
 class AdminData{
 
@@ -21,7 +18,7 @@ class AdminData{
     Navigator.of(context).popAndPushNamed("/home_view");
   }
 
-  Future <bool> IsGetProfile() async {
+  Future <bool> isGetProfile() async {
 
     String? idUser = DataHolder().auth.currentUser?.uid;
 

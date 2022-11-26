@@ -1,8 +1,5 @@
-import 'package:albabrox_examen_2dam/custom_views/grid_item.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../custom_views/rf_button.dart';
 
 class DescriptionView extends StatefulWidget {

@@ -1,7 +1,5 @@
 
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
-import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -14,6 +12,7 @@ class SplashView extends StatefulWidget {
 
 class _State extends State<SplashView> {
 
+  @override
   void initState(){
     super.initState();
     loadData();
@@ -21,24 +20,21 @@ class _State extends State<SplashView> {
 
   void loadData() async{
     //Función en la que vamos a cargar todos los recursos necesarios (aunque hay cosas que se cargan antes)
-      print("Esta en el metodo ya del SPLASHHHHHHHHHHHH ");
       await Future.delayed(const Duration(seconds: 2));
 
 
-      bool pExist = await AdminData().IsGetProfile();
+      bool pExist = await AdminData().isGetProfile();
 
 
       if(pExist){
 
         setState(() {
-          print("Evoy a la homeeeeeeeeeeeeeeeea del SPLASHHHHHHHHHHHH ");
           Navigator.of(context).popAndPushNamed("/home_view");
         });
 
       } else{
 
         setState(() {
-          print("voy al onboardinggggggggggggggggggggggggggSPLASHHHHHHHHHHHHHHHHHHHHHHHHH ");
           Navigator.of(context).popAndPushNamed("/onboarding_view");
         });
 

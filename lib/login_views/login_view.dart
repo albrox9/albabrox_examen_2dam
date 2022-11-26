@@ -1,13 +1,9 @@
 
-import 'package:albabrox_examen_2dam/custom_views/ek_input_text.dart';
-import 'package:albabrox_examen_2dam/custom_views/rf_button.dart';
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../custom_views/input_text.dart';
-import '../entities/profile.dart';
 
 class LoginView extends StatelessWidget {
 
@@ -18,7 +14,6 @@ class LoginView extends StatelessWidget {
   void singIn(String emailAddress, String password, BuildContext context) async{
 
     await Future.delayed(const Duration(seconds: 1));
-    print("E entrado al loign");
 
     try {
       await DataHolder().auth.signInWithEmailAndPassword(
@@ -27,15 +22,12 @@ class LoginView extends StatelessWidget {
 
       );
 
-      print("E entrado a comprobar estoooooooooooooooooooooooooooooooooooooooooooooooooo");
-      bool pExist = await AdminData().IsGetProfile();
+      bool pExist = await AdminData().isGetProfile();
 
       if(pExist){
-        print("ME voy a la homeeeeeeeeeeeeeeeeeeeeeeeeeee");
         Navigator.of(context).popAndPushNamed("/home_view");
 
       } else {
-        print("Me voy al onboardinggggggggggggggggggggggggg");
         Navigator.of(context).popAndPushNamed("/onboarding_view");
       }
 

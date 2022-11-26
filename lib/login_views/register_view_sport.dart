@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../custom_views/ek_input_text.dart';
 import '../data/admin_data.dart';
 
@@ -49,7 +47,6 @@ class _RegisterViewSport extends State<RegisterViewSport> {
                   children: [
                     OutlinedButton(
                       onPressed: () {
-                        print("Que pasa con el putobonton de los huevos");
                         AdminData().insertSport(itName.getText(), itDescription.getText(), context);
 
                       },
