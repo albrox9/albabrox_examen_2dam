@@ -55,7 +55,7 @@ class _HomeViewState extends State<HomeView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome ${DataHolder().p?.name}'),
+        title: const Text('Welcome'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

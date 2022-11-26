@@ -27,16 +27,13 @@ class AdminData{
 
     final docRef = DataHolder().db.collection("profiles").doc(idUser)
         .withConverter(fromFirestore: Profile.fromFirestore,
-      toFirestore: (Profile perfil, _) => perfil.toFirestore(),
+      toFirestore: (Profile profile, _) => profile.toFirestore(),
     );
 
     DocumentSnapshot docsnap = await docRef.get();
     return docsnap.exists;
 
   }
-
-
-
 
 
   void insertSport(String name, String description, BuildContext context) async {
