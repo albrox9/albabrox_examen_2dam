@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // Este widget es la raiz de la aplicación. Devuelve un MaterialApp.
+  //Configuro el Theme Data y le doy un color uniforme a toda la aplicacion
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber
       ),
       title: 'Welcome to The Adventurer',
-      initialRoute: '/',
+      initialRoute: '/', //Declaro la ruta inicial, que es el splash.
       routes: {
         '/': (context) => const SplashView(),
         '/login_view': (context) => const LoginView(),
