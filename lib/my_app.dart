@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber
       ),
       title: 'Welcome to The Adventurer',
-      initialRoute: DataHolder().auth.currentUser == null ? '/login_view' : '/splash_view',
+      initialRoute: '/',
       routes: {
-        '/splash_view': (context) => const SplashView(),
+        '/': (context) => const SplashView(),
         '/login_view': (context) => const LoginView(),
         '/register_view':(context) => const RegisterView(),
         '/home_view':(context) => const HomeView(),

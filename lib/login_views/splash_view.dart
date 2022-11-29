@@ -2,6 +2,8 @@
 import 'package:albabrox_examen_2dam/data/admin_data.dart';
 import 'package:flutter/material.dart';
 
+import '../singleton/data_holder.dart';
+
 class SplashView extends StatefulWidget {
 
   const SplashView ({Key? key}) : super(key: key);
@@ -18,30 +20,29 @@ class _State extends State<SplashView> {
     loadData();
   }
 
-  void loadData() async{
+  void loadData() async {
     //Función en la que vamos a cargar todos los recursos necesarios (aunque hay cosas que se cargan antes)
-      await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
 
+    if (DataHolder().auth.currentUser == null) {
+      Navigator.of(context).popAndPushNamed('/login_view');
 
+    } else {
       bool pExist = await AdminData().isGetProfile();
 
-
-      if(pExist){
-
+      if (pExist) {
         setState(() {
           Navigator.of(context).popAndPushNamed("/home_view");
         });
-
-      } else{
-
+      } else {
         setState(() {
           Navigator.of(context).popAndPushNamed("/onboarding_view");
         });
-
       }
+    }
+  }
 
-
-
+  void createProfile(){
 
   }
 

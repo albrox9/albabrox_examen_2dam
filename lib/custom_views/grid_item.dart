@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class GridItem extends StatelessWidget{
 
   final String sName;
+  final String sImage;
   final Function (int index) onShortClick;
   final int index;
 
   const GridItem({Key? key, required this.sName,
-   required this.index, required this.onShortClick}) : super(key:key);
+   required this.index, required this.onShortClick, required this.sImage, }) : super(key:key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class GridItem extends StatelessWidget{
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.network(sImage),
             Text(sName,
                 style: const TextStyle(
                   color: Colors.blueGrey,

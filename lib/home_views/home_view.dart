@@ -55,10 +55,12 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         title: const Text('Welcome'),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             GridView.builder(
+              physics: const ScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 shrinkWrap: true,
@@ -66,6 +68,7 @@ class _HomeViewState extends State<HomeView> {
                 itemBuilder: (BuildContext context, int index) {
                   return GridItem(
                     sName: sportGrid[index].name!,
+                    sImage: sportGrid[index].image!,
                     index: index,
                     onShortClick: dataSport,
                   );
@@ -86,7 +89,8 @@ class _HomeViewState extends State<HomeView> {
               child: const Icon(Icons.add_circle),
             ),
           ],
-      )
+      ),
+      ),
     );
   }
 }
