@@ -97,7 +97,7 @@ class _HomeViewState extends State<HomeView> {
           Navigator.of(context).popAndPushNamed('/register_view_sport');
         },
         child: const Icon(Icons.add),
-        backgroundColor: Colors.blueGrey.shade200,
+        backgroundColor: Colors.amber.shade200,
       ),
     );
   }
