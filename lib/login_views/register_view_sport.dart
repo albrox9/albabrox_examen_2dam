@@ -3,6 +3,7 @@ import '../custom_views/ek_input_text.dart';
 import '../data/admin_data.dart';
 
 //En esta clase inserto un nuevo deporte para mostrarlo en la home_view. La pantalla sale cuando le damos al FloatButton.
+//En esta clase tengo los input text con el logo del splash
 class RegisterViewSport extends StatefulWidget {
   const RegisterViewSport({Key? key}) : super(key: key);
 
