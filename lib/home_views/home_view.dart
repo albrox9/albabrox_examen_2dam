@@ -48,6 +48,9 @@ class _HomeViewState extends State<HomeView> {
     Navigator.of(context).popAndPushNamed('/description_view');
   }
 
+  //En esta vista, he añadido un scroll. a parte de la vista de los item tiene dos botones.
+  //Un botón de logout, y el floatbutton con el que añadir un nuevo item.
+  //Es necesario hacer scroll hacia abajo para verlos.
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +64,7 @@ class _HomeViewState extends State<HomeView> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            GridView.builder(
+            GridView.builder( //HACER SCROLL PARA VER LOS BOTONES.
               physics: const ScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
@@ -77,14 +80,14 @@ class _HomeViewState extends State<HomeView> {
                 }
             ),
 
-            OutlinedButton(
+            OutlinedButton( //Me desloguea de la aplicacion.
               onPressed: () {
                 AdminData().singOut(context);
                 // Navigator.of(context).popAndPushNamed('/login_view');
               },
               child: const Text("SING OUT"),
             ),
-            FloatingActionButton(
+            FloatingActionButton( //Añade un nuevo item llevandome a la pagina de registro del deporte.
               onPressed: () {
                 Navigator.of(context).popAndPushNamed('/register_view_sport');
               },
