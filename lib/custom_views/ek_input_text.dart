@@ -21,7 +21,7 @@ class InputIcon extends StatelessWidget {
     return _myController.text;
   }
 
-
+//Clase que implemente la imagen de splash en un boton de back
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,6 @@ class InputIcon extends StatelessWidget {
           border: const OutlineInputBorder(),
           prefixIcon: iLeadingIcon,
           suffixIcon: Image.asset('assets/icon/logo.ico', scale: 5.5,),
-          //const ImageIcon(AssetImage('assets/icon/logo.ico'), size: 10.5,),
         ),
       ),
     );

@@ -10,6 +10,7 @@ class GridItem extends StatelessWidget{
   const GridItem({Key? key, required this.sName,
    required this.index, required this.onShortClick, required this.sImage, }) : super(key:key);
 
+  //Clase que muestra las card de los grid.
   @override
   Widget build(BuildContext context) {
     return InkWell(

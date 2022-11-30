@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class RFButton extends StatelessWidget {
   const RFButton({Key? key}) : super(key: key);
 
+  //Clase que crea el boton con la imagen de splash
   @override
   Widget build(BuildContext context) {
     return MaterialButton(

@@ -5,8 +5,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import '../entities/profile.dart';
 
+//En esta clase tengo los metodos para insertar perfil y deporte. Además del metodo logout y comprobar el perfil
 class AdminData{
 
+
+  //inserta un nuevo perfil.
   void insertProfile(String name, int age, String city, String country, BuildContext context) async {
 
     Profile p = Profile(name: name, country: country, city: city, age: age);
@@ -18,6 +21,7 @@ class AdminData{
     Navigator.of(context).popAndPushNamed("/home_view");
   }
 
+  //Comprueba si hay o no perfil.
   Future <bool> isGetProfile() async {
 
     String? idUser = DataHolder().auth.currentUser?.uid;
@@ -33,9 +37,8 @@ class AdminData{
   }
 
 
+  //Añadir un nuevo deporte
   void insertSport(String name, String description, BuildContext context) async {
-
-    print("AUI Manatraonaraposgapsodgmasdgom");
 
     // Add a new document with a generated id.
     final sport = {"name": name, "description": description, "image": ""};
@@ -47,8 +50,9 @@ class AdminData{
     Navigator.of(context).popAndPushNamed("/home_view");
   }
 
+  //Metodo de deslogueo
   void singOut(context) async{
-    print("ME DESLOGUESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+
     await DataHolder().auth.signOut();
     Navigator.of(context).popAndPushNamed('/login_view');
 

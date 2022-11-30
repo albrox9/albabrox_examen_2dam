@@ -26,7 +26,7 @@ class InputText extends StatelessWidget {
   }
 
 
-
+//Clase custom de los input text
   @override
   Widget build(BuildContext context) {
     return Container(

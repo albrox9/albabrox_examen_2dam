@@ -39,7 +39,7 @@ class _DescriptionViewState extends State<DescriptionView> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              button,
+              button, //este botón es el que tiene la imagen del splash, y te lleva de nuevo a la hoome view
               ]
           ),
         )
