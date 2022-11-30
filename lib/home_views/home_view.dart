@@ -80,6 +80,7 @@ class _HomeViewState extends State<HomeView> {
                 }
             ),
 
+
             OutlinedButton( //Me desloguea de la aplicacion.
               onPressed: () {
                 AdminData().singOut(context);
@@ -87,14 +88,16 @@ class _HomeViewState extends State<HomeView> {
               },
               child: const Text("SING OUT"),
             ),
-            FloatingActionButton( //Añade un nuevo item llevandome a la pagina de registro del deporte.
-              onPressed: () {
-                Navigator.of(context).popAndPushNamed('/register_view_sport');
-              },
-              child: const Icon(Icons.add_circle),
-            ),
           ],
+        ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
+      floatingActionButton: FloatingActionButton(//Añade un nuevo item llevandome a la pagina de registro del deporte.
+        onPressed: () {
+          Navigator.of(context).popAndPushNamed('/register_view_sport');
+        },
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.blueGrey.shade200,
       ),
     );
   }
