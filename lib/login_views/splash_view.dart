@@ -17,16 +17,21 @@ class _State extends State<SplashView> {
   @override
   void initState(){
     super.initState();
+
+    //El metodo se ejecuta una vez que entra a la clase ya que está en el init state.
     loadData();
   }
 
   void loadData() async {
-    //Función en la que vamos a cargar todos los recursos necesarios (aunque hay cosas que se cargan antes)
+    //Con el Future le damos tiempo a la app a que cargue los datos.
     await Future.delayed(const Duration(seconds: 2));
 
+    //Con esta linea comprobamos si está logueado o no, el usuario. Si no está logueado, va a la login
+    //Una vez que se logue, en la loginview, volvemos a comprobar si tiene perfil o no (en la login).
     if (DataHolder().auth.currentUser == null) {
       Navigator.of(context).popAndPushNamed('/login_view');
 
+      //Despues, si el usuario está logueado, comprueba si tiene perfil o no.
     } else {
       bool pExist = await AdminData().isGetProfile();
 
