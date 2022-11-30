@@ -64,8 +64,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     OutlinedButton(
                       onPressed: () {
                         //Este boton llama al metodo que está en la clase adminData para hacer el insert de los datos.
-                        //No inserto la url de la imagen porque desde el telefono no incomodo para el usuario
-                        //Sería igual que cualquier dato string.
                         AdminData().insertProfile(itName.getText(), int.parse(itAge.getText()), itCity.getText(), itCountry.getText(), context);
 
                       },
