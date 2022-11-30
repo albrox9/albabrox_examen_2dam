@@ -25,6 +25,7 @@ class _HomeViewState extends State<HomeView> {
     getSportCollection();
   }
 
+  //Con este metodo se descargara la coleccion de deportes de la base de datos.
   void getSportCollection() async {
     final ref = DataHolder().db.collection("sports")
         .withConverter(
@@ -41,6 +42,7 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
+  //Al hacer click, le pasamod el indice al objeto y nos lleva a su descripcion correspodiente.
   void dataSport(int index) {
     DataHolder().indexSport = sportGrid[index];
     Navigator.of(context).popAndPushNamed('/description_view');
