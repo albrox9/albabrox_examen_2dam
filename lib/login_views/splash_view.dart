@@ -29,7 +29,10 @@ class _State extends State<SplashView> {
     //Con esta linea comprobamos si está logueado o no, el usuario. Si no está logueado, va a la login
     //Una vez que se logue, en la loginview, volvemos a comprobar si tiene perfil o no (en la login).
     if (DataHolder().auth.currentUser == null) {
-      Navigator.of(context).popAndPushNamed('/login_view');
+
+      setState(() {
+        Navigator.of(context).popAndPushNamed("/login_view");
+      });
 
       //Despues, si el usuario está logueado, comprueba si tiene perfil o no.
     } else {
