@@ -16,17 +16,22 @@ class LoginView extends StatelessWidget {
     await Future.delayed(const Duration(seconds: 1));
 
     try {
+
+      //Comprueba el usuario y la contraseña.
       await DataHolder().auth.signInWithEmailAndPassword(
         email: emailAddress,
         password: password,
 
       );
 
+      //repito la comprobación del splash, para ver si el usuario que se acaba de loguear tiene perfil o no.
       bool pExist = await AdminData().isGetProfile();
 
+      //Si tiene perfil me lleva a la home
       if(pExist){
         Navigator.of(context).popAndPushNamed("/home_view");
 
+        //Si no tiene perfil, va al onboardin
       } else {
         Navigator.of(context).popAndPushNamed("/onboarding_view");
       }
@@ -88,6 +93,7 @@ class LoginView extends StatelessWidget {
                   child: const Text("Sing up"),
                 ),
 
+                //Este botón es para registrar un nuevo usuario.
                 OutlinedButton(
                   onPressed: () {
                     Navigator.of(context).popAndPushNamed('/register_view');

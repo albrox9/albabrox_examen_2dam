@@ -4,8 +4,13 @@ import '../entities/sport.dart';
 
 class DataHolder {
 
+  //Declaro una instancia de firebase auth.
   FirebaseAuth auth = FirebaseAuth.instance;
+
+  //Declaro una instancia para conectarme a la base de datos, y solo usar esta.
   FirebaseFirestore db = FirebaseFirestore.instance;
+
+  //Declaro e inicializo un objeto para poder acceder a el desde cualquier clase.
   Sport indexSport = Sport();
 
 

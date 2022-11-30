@@ -11,6 +11,7 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView> {
 
+  //Aquí implemento el objeto custom con el icono que es la imagen del splash.
   InputIcon itName = InputIcon(
       iWordLength: 20,
       sHelperText: 'Enter username',
@@ -62,6 +63,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   children: [
                     OutlinedButton(
                       onPressed: () {
+                        //Este boton llama al metodo que está en la clase adminData para hacer el insert de los datos.
+                        //No inserto la url de la imagen porque desde el telefono no incomodo para el usuario
+                        //Sería igual que cualquier dato string.
                         AdminData().insertProfile(itName.getText(), int.parse(itAge.getText()), itCity.getText(), itCountry.getText(), context);
 
                       },
@@ -70,8 +74,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
                     OutlinedButton(
                       onPressed: () {
+                        //Este boton me desloguea y me devuelve a la loguin view
                         AdminData().singOut(context);
-                       // Navigator.of(context).popAndPushNamed('/login_view');
+
                       },
                       child: const Text("SING OUT"),
                     )

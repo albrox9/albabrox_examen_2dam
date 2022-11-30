@@ -3,7 +3,6 @@ import 'package:albabrox_examen_2dam/home_views/description_view.dart';
 import 'package:albabrox_examen_2dam/home_views/home_view.dart';
 import 'package:albabrox_examen_2dam/login_views/login_view.dart';
 import 'package:albabrox_examen_2dam/login_views/register_view_sport.dart';
-import 'package:albabrox_examen_2dam/singleton/data_holder.dart';
 import 'package:flutter/material.dart';
 
 import 'login_views/onboarding_view.dart';
