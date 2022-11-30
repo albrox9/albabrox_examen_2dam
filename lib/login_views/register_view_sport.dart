@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../custom_views/ek_input_text.dart';
 import '../data/admin_data.dart';
 
+//En esta clase inserto un nuevo deporte para mostrarlo en la home_view. La pantalla sale cuando le damos al FloatButton.
 class RegisterViewSport extends StatefulWidget {
   const RegisterViewSport({Key? key}) : super(key: key);
 
@@ -47,6 +48,9 @@ class _RegisterViewSport extends State<RegisterViewSport> {
                   children: [
                     OutlinedButton(
                       onPressed: () {
+                        /*Solo inserto nombre y descripcion porque la imagen no es comoda y funcional para el usuario
+                        Podría insertarla también como un string normal y corriente. Decido no hacerlo porque es poco comodo.
+                      */
                         AdminData().insertSport(itName.getText(), itDescription.getText(), context);
 
                       },
