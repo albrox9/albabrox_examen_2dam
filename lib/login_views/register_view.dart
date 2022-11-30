@@ -15,6 +15,7 @@ class RegisterView extends StatelessWidget {
 
     try {
 
+      //Crea la nueva cuenta en la base de datos.
       await DataHolder().auth.createUserWithEmailAndPassword(
         email: emailAddress,
         password: password,
